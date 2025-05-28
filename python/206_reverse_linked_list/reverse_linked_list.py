@@ -1,9 +1,6 @@
 """
-The main idea is in two pointers pattern. So we will have previous and current node pointers and also a temp
-variable for swap operation. At first previous will point to None and current to head. Traverse
-the list until current is None and on every step we will reassign current node's next to point to
-previous node, update previous node to point to current node and lastly reassign current node to point
-to temp variable. In the end we return a new head which is a previous node.
+Ok so the main idea is to use iterative approach which the most efficient, utilize two pointers and a temporary variable for swap operation. We will initialize 2 pointers, current will be the head of our linked list, which is 1->2->3->4, and previous that will be None, an empty value. We will traverse through the head (or input linkedList) until current pointer is truthy. 
+On each iteration we will have temp variable in order not to loose reference to our current's node next. We will also reassign current nodes next pointer to point to previous node to reverse list in opposite direction. Then we will update the previous node to be a current node (move one node forward) and lastly update current node (which now basically becomes detached from the reversed linked list) to be that temp stored node.
 
 Space complexity: O(n) and Time complexity O(1)
 """
