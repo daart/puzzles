@@ -17,7 +17,7 @@ def two_sum(nums, target):
 		if diff in result_map:
 			return [result_map[diff], i]
 		else: 
-		    result_map[nums[i]] = i
+			result_map[nums[i]] = i
     # if no match found
 	return None
     
