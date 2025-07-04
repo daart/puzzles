@@ -1,4 +1,17 @@
+"""
+in order to achieve O(n) time we don't want to use sort, so we'll put a list of numbers in a set instead. That will remove duplicates
+and will get ass O(1) access time to any number. Then we will iterate over each number in a set, and check if we are potentially in a 
+sequence. How to achieve that? It's simple we just have to check if current_num - 1 (which is adjacent to the left) is NOT already in a set.
 
+---[1, 2, 3, 4]----[100]----[200]
+
+if 0, 99 or 199 are not in a set, those are potential sequence starters.
+
+Within that condition, we have to initiate current_max_sequence_length, candidate which initializes as a current set value, and another loop with a condition that candidate is already in a set.
+On each iteration of that inner loop, we increment candidate and current_sequence_length by one. After we've exited inner loop we should update
+max_sequence_length which is a max of 2 possible values, current_sequence_length and max_sequence_length.
+
+"""
 def longest_seq(nums):
     hash_set = set(nums)
     max_sequence = 0
