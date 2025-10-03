@@ -49,7 +49,9 @@ i=7: nums[7] = -1 (negative, skip).
 
 Result: [5,6] (missing numbers).
 
-Example 2: nums = [1,1]Initial: nums = [1,1], n=2, range [1,2].
+Example 2: 
+nums = [1,1]
+Initial: nums = [1,1], n=2, range [1,2].
 First Loop:n=1: i = abs(1)-1 = 0, nums[0] = 1, make it -1: nums = [-1,1].
 n=1: i = abs(1)-1 = 0, nums[0] = -1, make it -1: nums = [-1,1].
 
