@@ -1,30 +1,3 @@
-"""
-You are climbing a staircase. It takes n steps to reach the top.
-
-Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
-
-Example 1:
-
-Input: n = 2
-Output: 2
-Explanation: There are two ways to climb to the top.
-1. 1 step + 1 step
-2. 2 steps
-Example 2:
-
-Input: n = 3
-Output: 3
-Explanation: There are three ways to climb to the top.
-1. 1 step + 1 step + 1 step
-2. 1 step + 2 steps
-3. 2 steps + 1 step
-
-Constraints:
-
-1 <= n <= 45
-
-
-"""
 
 # worst solution - recursive O(n**2) time
 def recursive(n):
@@ -78,7 +51,9 @@ we start al the calculations from 2nd step ways(2) = (ways(2-1) = 1) + (ways(2 -
 So on ways(3) = ways(3-1 = (ways(2-1) = 1)) + (ways(2 - 2) = 1)) + (ways(3-2) = 1)
 
 [1, 1, 2, 3, 5, 8] => ways to reach step (current is the sum of previous two)
-[0, 1, 2, 3, 4, 5] => number of steps or step indexes (basically a range from 0 to n we get from input. And since we know that next possible ways is the sum of current ways + previous, we don't need to get to last step, thus range(n-1))
+[0, 1, 2, 3, 4, 5] => number of steps or step indexes (basically a range from 0 to n we get from input. 
+And since we know that next possible ways is the sum of current ways + previous, 
+we don't need to get to last step, thus range(n-1))
 
 Complexity Time O(n) Space O(1)
 """
