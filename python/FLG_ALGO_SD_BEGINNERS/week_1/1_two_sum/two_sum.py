@@ -1,6 +1,5 @@
 """
 We will need a dictionary with key/value as num/index to find target indices.
-
 """
 def two_sum(nums, target):
     res = {}
