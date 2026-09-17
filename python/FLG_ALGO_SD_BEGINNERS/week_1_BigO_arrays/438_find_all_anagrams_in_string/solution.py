@@ -4,7 +4,7 @@ def find_anagrams(s, p):
     s_dict = dict()
 
     for char in p:
-        if p in p_dict:
+        if char in p_dict:
             p_dict[char] += 1
         else:
             p_dict[char] = 1
