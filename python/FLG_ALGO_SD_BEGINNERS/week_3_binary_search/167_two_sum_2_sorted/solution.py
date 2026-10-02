@@ -9,4 +9,4 @@ def twoSum(nums, target):
         else:
             r -= 1
 
-    return []]
+    return [] 
