@@ -1,13 +1,16 @@
 """
-the idea is to use hash map to track occurrences of ones to zeros balance. So we will initialize two counters for ones and zeros
-and on each iteration we will increase either of those. Next we want only to make a record in our hash only if diff (ones - zeros) has
-not been recorded to hash. If it's the first occurrence we set key to be total ones minus total zeros, and value is the current iteration
+the idea is to use hash map to track occurrences of ones to zeros balance.
+So we will initialize two counters for ones and zeros
+and on each iteration we will increase either of those. 
+Next we want only to make a record in our hash only if diff (ones - zeros) has
+not been recorded to hash. If it's the first occurrence we set key to be total 
+ones minus total zeros, and value is the current iteration
 index. We define our edge case is when number of zeros is equal to the number of ones, so we update our result to be their sum. In other case
 we've already marked the first occurrence of that balance before, so we want to get that value from the hash, and it is going to be our 
 shift index. And we want to calc that distance from that balance was first recorded up until the current iteration index. And we need
 to update res value that will be max of either current_res or iteration index - shift_index (the one we got from the hash)
 """
-
+# [0, 1, 1, 1, 0, 0, 0, 0, 0]
 def longest_contiguous_array(nums):
     ones, zeros = 0, 0
     longest_length = 0
