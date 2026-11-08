@@ -9,6 +9,11 @@ So as a result we'll just return max(nums). It's not ideal in terms of time sinc
 In worst case it's O(n ** 2) 
 """
 
+arr1 = [3,2,1,5,6,4]
+arr2 = [3,2,3,1,2,4,5,5,6]
+k1 = 2
+k2 = 4
+
 def find_Kth_largest(nums, k):
     counter = 0
 
@@ -18,3 +23,5 @@ def find_Kth_largest(nums, k):
 
     return max(nums)
 
+print(find_Kth_largest(arr1, k1))
+print(find_Kth_largest(arr2, k2))
