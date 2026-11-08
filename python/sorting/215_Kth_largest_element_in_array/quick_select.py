@@ -1,3 +1,4 @@
+import random
 arr1 = [3,2,1,5,6,4]
 arr2 = [3,2,3,1,2,4,5,5,6]
 k1 = 2
@@ -5,24 +6,40 @@ k2 = 4
 
 def find_Kth_largest(nums, k):
     target_index = len(nums) - k
-    
+
     def quick_select(left, right):
-        store_index = left
+        left_part = left
+        greater_part = right
+        current_pos = left
 
-        for i in range(left, right):
-            if nums[i] <= nums[right]:
-                nums[store_index], nums[i] = nums[i], nums[store_index]
-                store_index += 1
+        pivot = nums[random.randint(left, right)]
 
-        nums[store_index], nums[right] = nums[right], nums[store_index]
+        while current_pos <= greater_part:
+            if nums[current_pos] < pivot:
+                nums[left_part], nums[current_pos] = (
+                    nums[current_pos], nums[left_part]
+                )
+                left_part += 1
+                current_pos += 1
 
-        if store_index > target_index:
-            return quick_select(left, store_index - 1)
-        elif store_index < target_index:
-            return quick_select(store_index + 1, right)
+            elif nums[current_pos] > pivot:
+                nums[greater_part], nums[current_pos] = (
+                    nums[current_pos], nums[greater_part]
+                )
+                greater_part -= 1
+
+            else:
+                current_pos += 1
+
+        if target_index < left_part:
+            return quick_select(left, left_part - 1)
+
+        elif target_index > greater_part:
+            return quick_select(greater_part + 1, right)
+
         else:
-            return nums[store_index]
-    
+            return pivot
+
     return quick_select(0, len(nums) - 1)
 
 
